@@ -1,0 +1,38 @@
+﻿<Window x:Class="hw_23._02.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:hw_23._02"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.56*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Choose procedure:" Grid.Row="0" HorizontalAlignment="Center" FontSize="16" Margin="0,30,0,19"/>
+
+        <ComboBox x:Name="proceduresComboBox" Grid.Row="0" Grid.Column="0" Margin="12,64,12,53" FontSize="14" MaxHeight="28" SelectionChanged="proceduresComboBox_SelectionChanged"/>
+
+        <TextBlock Text="List of parameters:" Grid.Row="1" HorizontalAlignment="Center" FontSize="16"/>
+
+        <DataGrid x:Name="parametersGrid" Grid.Row="1" Grid.Column="0" Margin="33,32,33,50" IsReadOnly="True" AutoGenerateColumns="True" ItemsSource="{Binding Path=Parameters}"/>
+
+        <Grid Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Margin="30,30,30,86" Background="#FFF0F0F0">
+            <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <StackPanel x:Name="parametersInputStackPanel" Background="#FFF0F0F0" >
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        
+
+        <Button x:Name="ExecProcedureBtn" Content="Execute procedure" Grid.Row="1" MaxHeight="30" MaxWidth="150" Grid.ColumnSpan="2" Margin="329,84,0,-84" Click="ExecProcedureBtn_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,21 @@
+﻿<Window x:Class="hw_23._02.Result"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:hw_23._02"
+        mc:Ignorable="d"
+        Title="Result" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.65*"/>
+            <ColumnDefinition Width="0.35*"/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid x:Name="resultDataGrid" Margin="20" AutoGenerateColumns="True" ItemsSource="{Binding Path=DataView}"/>
+
+        <DataGrid x:Name="outputParametersGrid" Grid.Column="1" Margin="33,70,33,70" IsReadOnly="True" ItemsSource="{Binding Path=OutputParameters}"/>
+
+        <TextBlock Grid.Column="1" Text="Output Parameters:" Margin="0,39,0,45" HorizontalAlignment="Center"/>
+    </Grid>
+</Window>
